@@ -1,104 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Button,
-  Cascader,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Radio,
-  Select,
-  Switch,
-  TreeSelect,
-} from 'antd';
+import MyWork from './com/MyWork';
+import CustomUpload from './com/UploadCom';
+import MediaUpload from './com/UploadCom/MediaUpload';
 
-type SizeType = Parameters<typeof Form>[0]['size'];
 
 const App: React.FC = () => {
-  const [form] = Form.useForm();
-  const [componentSize, setComponentSize] = useState<SizeType | 'default'>('default');
-  const [initialValues, setInitialValues] = useState({
-    switch: false,
-  });
 
-  const onFormLayoutChange = ({ size }: { size: SizeType }) => {
-    setComponentSize(size);
-  };
-
-  useEffect(() => {
-    // Simulate an API call and set initial values after 1 second
-    setTimeout(() => {
-      setInitialValues({
-        switch: true,
-      });
-      console.log('INIT---timeout');
-    }, 1000);
-  }, []);
-
-  useEffect(() => {
-    // Update form fields with new initial values when initialValues change
-    form.setFieldsValue(initialValues);
-    console.log('INIT');
-    console.log(form.getFieldValue('switch'));
-  }, [initialValues, form]);
 
   return (
-    <Form
-      form={form}
-      labelCol={{ span: 4 }}
-      wrapperCol={{ span: 14 }}
-      layout="horizontal"
-      initialValues={{ size: componentSize, ...initialValues }}
-      onValuesChange={onFormLayoutChange}
-      size={componentSize as SizeType}
-      style={{ maxWidth: 600 }}
-    >
-      <Form.Item label="Form Size" name="size">
-        <Radio.Group>
-          <Radio.Button value="small">Small</Radio.Button>
-          <Radio.Button value="default">Default</Radio.Button>
-          <Radio.Button value="large">Large</Radio.Button>
-        </Radio.Group>
-      </Form.Item>
-      <Form.Item label="Input">
-        <Input />
-      </Form.Item>
-      <Form.Item label="Select">
-        <Select>
-          <Select.Option value="demo">Demo</Select.Option>
-        </Select>
-      </Form.Item>
-      <Form.Item label="TreeSelect">
-        <TreeSelect
-          treeData={[
-            { title: 'Light', value: 'light', children: [{ title: 'Bamboo', value: 'bamboo' }] },
-          ]}
-        />
-      </Form.Item>
-      <Form.Item label="Cascader">
-        <Cascader
-          options={[
-            {
-              value: 'zhejiang',
-              label: 'Zhejiang',
-              children: [{ value: 'hangzhou', label: 'Hangzhou' }],
-            },
-          ]}
-        />
-      </Form.Item>
-      <Form.Item label="DatePicker">
-        <DatePicker />
-      </Form.Item>
-      <Form.Item label="InputNumber">
-        <InputNumber />
-      </Form.Item>
-      <Form.Item label="Switch" valuePropName="checked" name="switch">
-        <Switch />
-      </Form.Item>
-      <Form.Item label="Button">
-        <Button>Button</Button>
-      </Form.Item>
-    </Form>
+    <div>
+      <MyWork />
+      <CustomUpload />
+      <MediaUpload />
+    </div>
   );
 };
 
