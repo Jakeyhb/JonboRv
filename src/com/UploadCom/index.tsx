@@ -48,6 +48,51 @@ const CustomUpload = () => {
       ))}
     </div>
   );
+  const ceshi = async (action: any, form: any) => {
+    let loadingStatus = 0;  // 0: 未开始, 1: 上传中, 2: 完成
+    let uploadResult = {
+      filePath: '',
+      fileName: '',
+      size: 0,
+      progress: 0,  // 进度条百分比
+    };
+  
+    // 显示上传的loading状态
+    const setLoadingStatus = (status: number) => {
+      loadingStatus = status;
+      console.log('loadingStatus:', loadingStatus);  // 可以在这里更新UI
+    };
+  
+    // 开始上传文件
+    setLoadingStatus(1);  // 上传中
+    try {
+      await uploadAction(action, form, (progressEvent: ProgressEvent) => {
+        const { total, loaded } = progressEvent;
+        const progress = total ? Math.round((loaded / total) * 100) : 0;
+  
+        // 更新进度
+        uploadResult.progress = progress;
+  
+        // 更新UI中的进度条
+        console.log(`Progress: ${progress}%`);
+      });
+  
+      // 上传完成后，处理返回的数据
+      const response = await action(form);  // 假设action返回的是上传后的接口响应
+      uploadResult.filePath = response.filePath;
+      uploadResult.fileName = response.fileName;
+      uploadResult.size = response.size;
+  
+      // 完成上传
+      setLoadingStatus(2);  // 上传完成
+      console.log('Upload completed:', uploadResult);
+  
+    } catch (error) {
+      setLoadingStatus(0);  // 上传失败
+      console.error('Upload failed:', error);
+    }
+  };
+  
 
   return (
     <div>

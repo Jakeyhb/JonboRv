@@ -57,7 +57,7 @@ const MediaUpload: React.FC<MediaUploadProps> = () => {
             onSuccess && onSuccess("ok"); // 模拟上传成功
           }, 1000);
         }}
-        onChange={handleChange}
+        onChange={handleChange} 
         fileList={fileList}
         showUploadList={false} // 不使用默认的文件列表
       >
