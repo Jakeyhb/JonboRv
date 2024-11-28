@@ -1,0 +1,42 @@
+.progressBarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .linearProgressWrapper {
+    display: flex;
+    align-items: center; /* 使子元素（进度条和标签）垂直居中 */
+    width: 100%;
+  }
+  
+  .linearProgress {
+    flex-grow: 1; /* 让进度条占满剩余空间 */
+  }
+  
+  .progressLabel {
+    margin-left: 10px; /* 标签与进度条之间的间距 */
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .circularProgressContainer {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .circularProgress {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .circularProgressLabel { 
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  

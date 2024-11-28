@@ -25,27 +25,7 @@ const CollapsiblePanel = () => {
         }}
       >
         <Typography>
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-          This is a collapsible panel. You can put any content here, such as text, images, or other components.
-        </Typography>
-        <Typography>
-          More content here! This content will be hidden when the panel is collapsed.
-        </Typography>
-        <Typography>
-          Even more content can go here, and it will be hidden when collapsed!
+          ceshi 
         </Typography>
       </Box>
       

@@ -1,0 +1,35 @@
+@media-size: 80px;
+
+.previewContainer {
+  width: @media-size;
+  height: @media-size;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.media {
+  width: @media-size;
+  height: @media-size;
+  object-fit: cover;
+}
+
+.fileIconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fileName {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  word-wrap: break-word;
+  width: 100%;
+}
