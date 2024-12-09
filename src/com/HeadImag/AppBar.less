@@ -1,0 +1,36 @@
+
+.app-bar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0, 21, 41, 0.35); /* 给AppBar增加阴影效果 */
+  }
+  
+  .app-bar-left {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .app-bar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-bar-right .ant-btn {
+    background: transparent;
+    border: none;
+    color: white;
+  }
+  
+  .app-bar-right .ant-avatar {
+    margin-left: 10px;
+  }
+  
+  /* 为了避免AppBar遮挡页面内容，给页面内容增加上边距 */
+  body {
+    margin-top: 64px; /* AppBar的高度，确保内容不被覆盖 */
+  }
+  

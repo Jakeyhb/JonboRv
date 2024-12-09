@@ -7,6 +7,7 @@ import Demo from './com/ProgressBar/demo';
 import AvatarWithLabel from './com/Avatar';
 import ImageDisplay from './com/Custim';
 import SearchComponent from './com/SearchComponent';
+import AppBar from './com/HeadImag';
 
 
 const App: React.FC = () => {
@@ -17,6 +18,9 @@ const App: React.FC = () => {
 
   return (
     <div>
+      
+      <AppBar />
+      
       <MyWork />
       <CustomUpload />
       <MediaUpload />
