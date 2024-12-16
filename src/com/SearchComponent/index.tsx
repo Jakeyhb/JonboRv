@@ -7,7 +7,7 @@ interface SearchComponentProps {
   onSearch: (query: string) => void;
 }
 
-const SearchComponent: React.FC<SearchComponentProps> = ({ onSearch }) => {
+const SearchComponent: React.FC<SearchComponentProps> = ({ onSearch }) => { 
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {

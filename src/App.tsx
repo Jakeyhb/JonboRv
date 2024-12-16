@@ -10,9 +10,9 @@ import SearchComponent from './com/SearchComponent';
 import AppBar from './com/HeadImag';
 
 
-const App: React.FC = () => {
+const App: React.FC = () => { 
   const handleSearch = (query: string) => {
-    console.log('Searching for:', query);
+    console.log('Searching for:', query); 
     // 这里可以加入处理搜索逻辑，例如 API 请求
   };
 
@@ -21,7 +21,7 @@ const App: React.FC = () => {
       
       <AppBar />
       
-      <MyWork />
+      <MyWork />   
       <CustomUpload />
       <MediaUpload />
       <CollapsiblePanel />
@@ -32,9 +32,9 @@ const App: React.FC = () => {
       />
       <AvatarWithLabel
         label="Jane Smith"
-        img="https://example.com/avatar2.jpg"
+        img="https://example.com/avatar2.jpg"  
       />
-
+ 
       <h1>Image Display Component</h1>
       <ImageDisplay />  {/* 使用 ImageDisplay 组件 */}
 
