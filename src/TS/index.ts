@@ -42,14 +42,14 @@ interface Countdown {
       // 每秒更新服务器时间（模拟服务器时间的递增）
       currentServerTime += 1000;  // 增加1秒
   
-      // 使用更新后的服务器时间计算倒计时
+      // 使用更新后的服务器时间计算倒计时  
       const countdown = calculateCountdown(new Date(currentServerTime), startTime);
   
       // 输出倒计时
       console.log(`距离开始还有: ${countdown.days}天 ${countdown.hours}小时 ${countdown.minutes}分钟 ${countdown.seconds}秒`);
   
       // 如果倒计时结束，停止循环
-      if (countdown.days === 0 && countdown.hours === 0 && countdown.minutes === 0 && countdown.seconds === 0) {
+      if (countdown.days === 0 && countdown.hours === 0 && countdown.minutes === 0 && countdown.seconds === 0) {  
         console.log("活动已开始！");
         clearInterval(interval);  // 停止倒计时
       }
