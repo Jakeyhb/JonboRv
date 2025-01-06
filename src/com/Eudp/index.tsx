@@ -1,4 +1,3 @@
-// EpubReader.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Button } from '@mui/material';
 import axios from 'axios';
@@ -7,8 +6,17 @@ import './EpubReader.less';
 // 模拟电子书章节数据
 const mockApiUrl = 'http://localhost:5000/api/chapters';
 
-const EpubReader = () => {
-  const [chapters, setChapters] = useState<any[]>([]);
+interface EpubReaderProps {
+  currentChapter: {
+    id: string;
+    title: string;
+    content: string;
+  };
+  chapterId: string; // 新增传入的章节ID
+}
+// 增加一个store，然后将store进行 
+const EpubReader: React.FC<EpubReaderProps> = ({ chapterId }) => {
+  const [chapters, setChapters] = useState<unknown[]>([]);
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0);
   const [scrolling, setScrolling] = useState(false);
   
@@ -77,20 +85,32 @@ const EpubReader = () => {
     };
   }, [scrolling]);
 
-  return (
-    <Box className="epub-reader">
-      <h2>{chapters[currentChapterIndex]?.title}</h2>
-      <div
-        ref={containerRef}
-        className="content-container"
-        style={{ height: '400px', overflowY: 'auto', padding: '20px', border: '1px solid #ddd' }}
-      >
-        <p>{chapters[currentChapterIndex]?.content}</p>
-      </div>
+  // 根据传入的章节ID设置当前章节的索引
+  useEffect(() => {
+    if (chapterId && chapters.length > 0) {
+      const index = chapters.findIndex((chapter: any) => chapter.id === chapterId);
+      if (index !== -1) {
+        loadChapter(index);
+      }
+    }
+  }, [chapterId, chapters]);
 
-      <Box className="controls">
-        <Button onClick={prevChapter} variant="contained">Previous Chapter</Button>
-        <Button onClick={nextChapter} variant="contained">Next Chapter</Button>
+  return (
+    <Box className="epub-reader" display="flex" justifyContent="space-between" position="relative">
+      <Box flex="1">
+        <h2>{chapters[currentChapterIndex]?.title}</h2>
+        <div
+          ref={containerRef}
+          className="content-container"
+          style={{ height: '400px', overflowY: 'auto', padding: '20px', border: '1px solid #ddd' }}
+        >
+          <p>{chapters[currentChapterIndex]?.content}</p>
+        </div>
+
+        <Box className="controls">
+          <Button onClick={prevChapter} variant="contained">Previous Chapter</Button>
+          <Button onClick={nextChapter} variant="contained">Next Chapter</Button>
+        </Box>
       </Box>
     </Box>
   );

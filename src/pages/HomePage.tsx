@@ -1,6 +1,7 @@
 // src/pages/HomePage.tsx
 import React, { useState, useEffect } from 'react';
 import { Affix, Button } from 'antd';  // 引入 Affix 组件
+import EpubReader from '../com/Eudp/ceshi';
 
 const HomePage: React.FC = () => {
   // 用来跟踪滚动的位置
@@ -98,7 +99,12 @@ const HomePage: React.FC = () => {
       {/* 第二部分： */}
       <div style={{ height: '1240px', background: '#f5f5f5' }}>
         <p>这是页面的内容部分，高度为 1240px。</p>
+
+
+        <EpubReader />
       </div>
+      {/* 第二部分： */}
+
     </div>
   );
 };
