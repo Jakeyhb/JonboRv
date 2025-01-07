@@ -1,7 +1,7 @@
 // src/pages/HomePage.tsx
 import React, { useState, useEffect } from 'react';
 import { Affix, Button } from 'antd';  // 引入 Affix 组件
-import EpubReader from '../com/Eudp/ceshi';
+import EpubReader from '../com/Eudp/ceshi/source/index';
 
 const HomePage: React.FC = () => {
   // 用来跟踪滚动的位置
@@ -44,6 +44,7 @@ const HomePage: React.FC = () => {
     };
   }, []);
 
+  const epubUrl = 'https://flowus.cn/yutongxue/share/02c720be-6126-482e-a791-883fa7b9832d?code=892434【FlowUs 息流】The-Path-to-Breaking-Free-From-Addiction.epub'
   return (
     <div>
       {/* 第一部分： */}
@@ -101,7 +102,9 @@ const HomePage: React.FC = () => {
         <p>这是页面的内容部分，高度为 1240px。</p>
 
 
-        <EpubReader />
+        {/* <EpubReader /> */}
+        <EpubReader resourceUrl={epubUrl} />
+       
       </div>
       {/* 第二部分： */}
 

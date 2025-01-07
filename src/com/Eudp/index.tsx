@@ -75,7 +75,7 @@ const EpubReader: React.FC<EpubReaderProps> = ({ chapterId }) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      containerRef.current.addEventListener("wheel", handleScroll);
+      containerRef.current.addEventListener("wheel",  );
     }
 
     return () => {
