@@ -110,7 +110,7 @@ const EpubReader: React.FC<EpubReaderProps> = ({ chapterId }) => {
         <Box className="controls">
           <Button onClick={prevChapter} variant="contained">Previous Chapter</Button>
           <Button onClick={nextChapter} variant="contained">Next Chapter</Button>
-        </Box>
+        </Box>  
       </Box>
     </Box>
   );
